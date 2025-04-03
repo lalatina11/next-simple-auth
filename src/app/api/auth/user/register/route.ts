@@ -17,14 +17,14 @@ export const POST = async (req: NextRequest) => {
       throw new Error("Invalid Email!");
     }
     if (!username || username.trim() === "" || username?.length < 6) {
-      throw new Error("Invalid Email!");
+      throw new Error("Invalid Username!");
     }
     if (
       !passwordFromFE ||
       passwordFromFE.trim() === "" ||
       passwordFromFE?.length < 6
     ) {
-      throw new Error("Invalid Email!");
+      throw new Error("Invalid Password!");
     }
 
     const existingUsername = await prisma.user.findFirst({
